@@ -9,36 +9,11 @@ module.exports = {
     darkMode: false, // or 'media' or 'class'
     theme: {
       extend: {
-        fontFamily: {
-          sans: [
-            '"Founders Grotesk X-Condensed Bold"',
-            '"Roboto Condensed"',
-            ...defaultTheme.fontFamily.sans,
-          ],
-          serif: [
-            '"STIX Two Text"',
-            ...defaultTheme.fontFamily.serif,
-          ],
-          'founders-light': [
-            '"Founders Grotesk X-Condensed Light"',
-            '"Roboto Condensed"',
-            ...defaultTheme.fontFamily.sans,
-          ],
-        },
-        fontSize: {
-          '10xl': '9.375rem',
-        },
-        lineHeight: {
-          'crunch': '0.75',
-        },
         colors: {
-          "primary": '#00311e', // deep green
-          "secondary": '#56e13b', // bright pine
-          "tertiary": '#fdc6c2', // dusk
-          "accent": '#4527a0', // twilight
-          "soft-yellow": "#fffae1",
-          "sky": '#bff5fc',
-          "sap": '#ffd700',
+          "primary": '#',
+          "secondary": '#56e13b',
+          "tertiary": '#fdc6c2',
+          "accent": '#4527a0',
           "black": '#000',
           "white": '#fff',
         }
