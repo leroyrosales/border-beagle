@@ -6,8 +6,8 @@
  *
  */
 
-//Custom video taxonomy
-function ig_evergreen_video_taxonomy() {
+//Custom taxonomy
+function border_beagle_custom_taxonomy() {
 
 	$labels = array(
 		'name' => _x( 'Categories', 'categories' ),
@@ -36,7 +36,7 @@ function ig_evergreen_video_taxonomy() {
 
 }
 
-add_action( 'init', 'ig_evergreen_video_taxonomy', 0 );
+add_action( 'init', 'border_beagle_custom_taxonomy', 0 );
 
 if ( !current_user_can( 'administrator' ) )  {
 	add_action( 'create_term', 'undo_create_tag_term', 10, 3);

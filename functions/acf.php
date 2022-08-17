@@ -34,7 +34,7 @@ if ( current_user_can( 'activate_plugins' ) ) {
 // 			'menu_title'      => __( 'Social' ),
 // 			'menu_slug'       => 'social-settings',
 // 			'parent_slug'     => 'options-general.php',
-// 			'updated_message' => __('Social Accounts updated', 'ig-evergreen'),
+// 			'updated_message' => __('Social Accounts updated', 'border-beagle'),
 // 		)
 // 	);
 

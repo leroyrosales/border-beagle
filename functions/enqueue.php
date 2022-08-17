@@ -10,10 +10,10 @@ add_action( 'wp_enqueue_scripts', function(){
 });
 
 // Swiper Enqueues
-function ig_evergreen_enqueues() {
+function border_beagle_enqueues() {
 
-	wp_enqueue_style( 'ig-evergreen-styles', get_template_directory_uri() . '/assets/dist/main.css', array(), null, 'all' );
-	wp_enqueue_script( 'ig-evergreen-scripts', get_template_directory_uri() . '/assets/dist/main.bundle.js', array(), false, true );
+	wp_enqueue_style( 'border-beagle-styles', get_template_directory_uri() . '/assets/dist/main.css', array(), null, 'all' );
+	wp_enqueue_script( 'border-beagle-scripts', get_template_directory_uri() . '/assets/dist/main.bundle.js', array(), false, true );
 
 }
-add_action( 'wp_enqueue_scripts', 'ig_evergreen_enqueues' );
+add_action( 'wp_enqueue_scripts', 'border_beagle_enqueues' );

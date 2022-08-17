@@ -11,7 +11,7 @@ add_action( 'widgets_init', function() {
 
   register_sidebar(
       array(
-      'name' => __( 'Sidebar','ig-evergreen-theme' ),
+      'name' => __( 'Sidebar','border-beagle-theme' ),
       'id' => 'sidebar',
       'description' => 'Sidebar widget area',
       'before_widget' => '<aside class="sidebar">',

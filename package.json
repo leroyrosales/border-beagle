@@ -1,7 +1,7 @@
 {
-  "name": "ig-evergreen-theme",
-  "version": "1.0.0",
-  "description": "A Twig for WordPress theme using the [Timber Library](https://wordpress.org/plugins/timber-library/), [Gulp](https://gulpjs.com/), [Bootstrap](https://getbootstrap.com/).",
+  "name": "border-beagle",
+  "version": "2.0.0",
+  "description": "A Twig for WordPress theme using the [Timber Library](https://wordpress.org/plugins/timber-library/), [WebPack](https://webpack.js.org/), [TailwindCSS](https://tailwindcss.com/).",
   "main": "index.js",
   "directories": {
     "test": "tests"
@@ -35,8 +35,6 @@
   "homepage": "",
   "dependencies": {
     "autoprefixer": "^10.3.4",
-    "jquery-awesome-cursor": "^0.3.1",
-    "swiper": "^8.3.2",
     "tailwindcss": "^3.1.4"
   }
 }
