@@ -1,0 +1,66 @@
+// Gutenberg Button Options
+
+
+.button {
+	font-family: "Founders Grotesk X-Condensed Bold", "Roboto Condensed", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	text-transform: uppercase;
+	letter-spacing: .025rem;
+    &-light-green-background {
+        background:#56e13b;
+		color:#fff;
+    	&:hover {
+        color:#00311e;
+        }
+    }
+	&-dark-green-background {
+        background:#00311e;
+		color:#fff;
+		&:hover {
+			color:#56e13b;
+		}
+    }
+	&-light-background {
+        background: linear-gradient(90deg,#caa5ba 0,36%,#f5dfdd 72%,86%,#f1d6d5);
+		color:#00311e;
+        width: 100%;
+        font-weight: bold;
+        font-size: 60px;
+        padding:0 !important;
+        @media screen and (min-width: 768px) {
+            font-size: 150px;
+        }
+        & svg {
+            font-size: 27px;
+            padding-bottom: 10px;
+            @media screen and (min-width: 768px) {
+                padding-bottom: 30px;
+            }
+        }
+		&:hover {
+			color:#fff;
+            a {
+                color: #fff;
+            }
+		}
+    }
+	&-no-border-green {
+        border:0;
+        font-weight:700;
+        font-size: 18px;
+        letter-spacing: 2%;
+        color:#00311e;
+        &:hover {
+        color:#56e13b;
+        }
+    }
+    &-no-border-white {
+        border:0;
+        font-weight:700;
+        font-size: 18px;
+        letter-spacing: 2%;
+        color:#fff;
+    	&:hover {
+        color:#56e13b;
+        }
+    }
+}

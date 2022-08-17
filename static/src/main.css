@@ -1,0 +1,526 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import './custom/gutenberg-colors.scss';
+@import './custom/text.scss';
+@import './custom/buttons.scss';
+@import './custom/slider.scss';
+
+@layer base {
+
+  @font-face {
+    font-family: "Founders Grotesk X-Condensed Bold";
+    font-weight: 700;
+    font-style: bold;
+    src:
+      url( '/assets/fonts/founders/WOFF2/founders-grotesk-x-condensed-bold.woff2' ) format('woff2'),
+      url( '/assets/fonts/founders/TTF/FoundersGroteskX-Condensed-Bold.ttf' ) format('ttf'),
+      url( '/assets/fonts/founders/OTF/FoundersGroteskX-Condensed-Bold.otf' ) format('otf');
+  }
+
+  @font-face {
+    font-family: "Founders Grotesk X-Condensed Light";
+    font-weight: 300;
+    font-style: light;
+    src:
+      url( '/assets/fonts/founders/WOFF2/founders-grotesk-x-condensed-light.woff2' ) format('woff2'),
+      url( '/assets/fonts/founders/TTF/FoundersGroteskX-Condensed-Light.ttf' ) format('ttf'),
+      url( '/assets/fonts/founders/OTF/FoundersGroteskX-Condensed-Light.otf' ) format('otf');
+  }
+
+  body {
+    @apply font-serif font-normal;
+    line-height: 1.6;
+  }
+
+  h1,
+  .h1,
+  .H1 {
+    @apply text-8xl lg:text-10xl;
+  }
+
+  h2,
+  .h2,
+  .H2 {
+    @apply text-6xl lg:text-[5rem];
+  }
+
+  h3,
+  .h3,
+  .H3 {
+    @apply text-4xl;
+  }
+
+  h4,
+  .h4,
+  .H4 {
+    @apply text-lg;
+  }
+
+  h1, h2, h3, h4, h5, h6,
+  .h1, .h2, .h3, .h4, .h5, .h6,
+  .H1, .H2, .H3, .H4, .H5, .H6
+  .display {
+    @apply uppercase font-sans font-bold leading-[0.75] mb-8;
+  }
+
+  a {
+    @apply hover:text-secondary;
+  }
+
+  main ul,
+  p {
+    @apply mb-8;
+  }
+
+  main ul {
+    @apply pl-5;
+  }
+
+  main ul:not(.inputs-list) li:before {
+    content: '\2014';
+    @apply absolute -ml-5;
+  }
+
+}
+
+
+/**
+ * Root Media Query Variables
+ */
+:root {
+	/* Spacing */
+	--global--spacing-unit: 20px;
+	--global--spacing-measure: unset;
+	--global--spacing-horizontal: 20px;
+	--global--spacing-vertical: 30px;
+
+	--responsive--spacing-horizontal: calc(2 * var(--global--spacing-horizontal) * 0.6);
+	--responsive--aligndefault-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignwide-width: calc(100vw - var(--responsive--spacing-horizontal));
+	--responsive--alignfull-width: 100%;
+	--responsive--alignright-margin: var(--global--spacing-horizontal);
+	--responsive--alignleft-margin: var(--global--spacing-horizontal);
+
+  /* Custom */
+  --primary: #00311e;
+  --secondary: #56e13b;
+  --plyr-color-main: var(--secondary);
+}
+
+@media only screen and (min-width: 482px) {
+
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 4 * var(--global--spacing-horizontal)), 610px);
+		--responsive--alignwide-width: calc(100vw - 4 * var(--global--spacing-horizontal));
+		--responsive--alignright-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+		--responsive--alignleft-margin: calc(0.5 * (100vw - var(--responsive--aligndefault-width)));
+	}
+
+}
+
+@media only screen and (min-width: 822px) {
+
+	:root {
+		--responsive--aligndefault-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 610px);
+		--responsive--alignwide-width: min(calc(100vw - 8 * var(--global--spacing-horizontal)), 1240px);
+	}
+
+}
+
+.wp-block {
+	max-width: var(--responsive--aligndefault-width);
+}
+
+.wp-block[data-align=wide],
+.wp-block.alignwide {
+	max-width: var(--responsive--alignwide-width);
+}
+
+.wp-block[data-align=full],
+.wp-block.alignfull {
+	max-width: none;
+}
+
+/**
+ * Extends
+ */
+.post-thumbnail,
+article .wp-audio-shortcode,
+article > *:not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
+*[class*=inner-container] > *:not(article):not(.alignwide):not(.alignfull):not(.alignleft):not(.alignright):not(.wp-block-separator):not(.woocommerce),
+.default-max-width {
+  max-width: var(--responsive--aligndefault-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.widget-area,
+.pagination,
+.comments-pagination,
+.post-navigation,
+.site-footer,
+.site-header,
+.alignwide,
+.wide-max-width {
+  max-width: var(--responsive--alignwide-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignwide {
+  @apply container mx-auto px-4 2xl:px-[2.375rem];
+}
+
+.alignfull,
+.wp-block-group .wp-block-group__inner-container > *.alignfull,
+.full-max-width {
+  max-width: var(--responsive--alignfull-width);
+  width: var(--responsive--alignfull-width);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 482px) {
+
+  .alignfull,
+  .full-max-width {
+    max-width: var(--responsive--alignfull-width);
+    width: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.entry-header .post-thumbnail,
+.singular .post-thumbnail,
+.alignfull [class*=inner-container] > .alignwide,
+.alignwide [class*=inner-container] > .alignwide {
+  margin-left: auto;
+  margin-right: auto;
+  width: var(--responsive--alignwide-width);
+  max-width: var(--responsive--alignfull-width);
+}
+
+@media only screen and (min-width: 482px) {
+
+  .article-body > .alignleft {
+
+    /*rtl:ignore*/
+    margin-left: var(--responsive--alignleft-margin);
+
+    /*rtl:ignore*/
+    margin-right: var(--global--spacing-horizontal);
+  }
+
+  .article-body > .alignright {
+
+    /*rtl:ignore*/
+    margin-left: var(--global--spacing-horizontal);
+
+    /*rtl:ignore*/
+    margin-right: var(--responsive--alignright-margin);
+  }
+
+}
+
+/* article > *:not([class^="wp-container-"]) {
+  @apply pb-4;
+} */
+
+/* .wp-block-columns {
+  @apply mb-0;
+}  */
+
+/* [class^='wp-container-']:last-child {
+  @apply mb-0;
+} */
+
+/* .has-background+.has-background {
+  @apply mb-0;
+} */
+
+/* Handles scrollback nav */
+[data-nav-section] {
+  @apply absolute top-0;
+  z-index: 999;
+  transition: transform 250ms ease-in-out;
+}
+
+.scrolling-down [data-nav-section] {
+  @apply absolute;
+  transform: translateY( -100% );
+}
+
+.scrolling-up [data-nav-section] {
+  @apply fixed bg-primary;
+  transform: translateY( 0 );
+}
+
+/* HubSpot custom styles */
+.hs-form label {
+  @apply block font-sans text-lg text-primary uppercase mb-2 tracking-wide;
+}
+
+.hs-form input:not([type=submit]),
+.hs-form textarea {
+  @apply border-primary border-solid border;
+}
+
+.has-background .hs-form input,
+.has-background .hs-form textarea {
+  @apply border-none;
+}
+
+.hbspt-form .hs-form fieldset.form-columns-2 .hs-form-field {
+  @apply w-full lg:w-1/2;
+}
+
+.hbspt-form .hs-custom-style>div input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]),
+.hbspt-form .hs-custom-style fieldset input:not([type=image]):not([type=submit]):not([type=button]):not([type=radio]):not([type=checkbox]):not([type=file]) {
+  @apply p-2 w-full;
+}
+
+.hs-custom-style>div>div:last-of-type .hs-input:not([type=checkbox]):not([type=radio]), .hs-custom-style fieldset>div:last-of-type .hs-input:not([type=checkbox]):not([type=radio]):not([type=file]) {
+  @apply p-2 w-full;
+}
+
+.hs-form ul {
+  @apply p-0;
+}
+
+.hs-form li.hs-form-checkbox input[type=checkbox] {
+  @apply mr-1;
+}
+
+.hbspt-form .hs-custom-style .hs-input[type="text"] {
+  @apply min-w-full max-w-full;
+}
+.hbspt-form .hs-custom-style .hs-input[type="radio"] {
+  @apply mr-2;
+}
+
+.hbspt-form .hs-custom-style .hs-form-field {
+  @apply mb-4;
+}
+
+.hbspt-form .hs-custom-style .legal-consent-container .hs-richtext {
+  @apply text-primary text-sm;
+}
+
+.hbspt-form .hs-custom-style .legal-consent-container .hs-richtext a {
+  @apply underline hover:no-underline;
+}
+
+.hbspt-form .hs-submit {
+  @apply font-sans text-4xl text-primary uppercase hover:cursor-pointer hover:text-secondary inline-block;
+}
+
+.hbspt-form .hs-button {
+ @apply uppercase hover:cursor-pointer;
+}
+
+.hbspt-form .hs-submit .actions {
+  @apply flex gap-1;
+}
+
+.has-background .hbspt-form .hs-submit {
+  @apply hover:text-white;
+}
+
+/* Swiper custom styles */
+.swiper {
+  @apply w-full h-full;
+}
+
+.swiper-horizontal>.swiper-scrollbar, .swiper-scrollbar.swiper-scrollbar-horizontal {
+  @apply h-[2px] relative max-w-[420px] mx-auto my-8;
+}
+
+.swiper-scrollbar-drag {
+  @apply bg-secondary h-1;
+}
+
+.services-swiper {
+  @apply pl-2 pr-44 [@media(min-width:482px)]:pl-[2.25rem] [@media(min-width:640px)]:pl-4 [@media(min-width:1536px)]:pl-[2.375rem] [@media(min-width:1792px)]:pl-[10.375rem];
+}
+
+/* Margin for colored blocks */
+.wp-block-columns:last-child {
+  margin-bottom:0;
+}
+
+.wp-block-columns.has-background {
+margin-bottom:0;
+}
+
+/* Page specific banner text color for Products and Platform & Applied Engineering Services 
+
+.page-id-234 .fill-white:hover {
+  fill:#fff;
+}
+
+.page-id-234 [data-mobile-nav].hidden a {
+  color:#00311E;
+}
+
+.page-id-234 [data-mobile-nav]a {
+  color:#56E13B;
+}
+
+.page-id-234 [data-mobile-nav]a:active {
+  color:#fff;
+}
+.page-id-234 [data-mobile-nav]a {
+  color:#fff;
+}
+
+.page-id-234 [data-mobile-nav].hidden .dropdown-item {
+  color:#fff;
+}
+
+.page-id-234 [data-mobile-nav] .bg-secondary a {
+  color:#00311E;
+}
+
+.page-id-234.scrolling-up [data-mobile-nav] .bg-secondary a {
+  color:#00311e !important;
+}
+
+.page-id-234.scrolling-up  [data-mobile-nav].hidden .dropdown-item {
+  color:#fff !important;
+}
+
+.page-id-234.scrolling-up #nav-main a {
+  color:#fff;
+}
+
+
+.page-id-234.scrolling-up .fill-white {
+  fill: #fff !important;
+}
+
+.page-id-234 .dropdown-item {
+  color:#fff;
+  opacity:1;
+}
+
+.page-id-234[style*="overflow: hidden"] .fill-white {
+  fill: #56E13B;
+}
+
+.page-id-234 .fill-white {
+  fill:#00311E;
+}
+
+
+.page-id-234 hgroup {
+  color:#00311E;
+}
+
+.page-id-238 .fill-white:hover {
+  fill:#fff;
+}
+
+.page-id-238 [data-mobile-nav].hidden a {
+  color:#00311E;
+}
+
+.page-id-238 [data-mobile-nav]a {
+  color:#56E13B;
+}
+
+.page-id-238 [data-mobile-nav]a:active {
+  color:#fff;
+}
+.page-id-238 [data-mobile-nav]a {
+  color:#fff;
+}
+
+.page-id-238 [data-mobile-nav].hidden .dropdown-item {
+  color:#fff;
+}
+
+.page-id-238 [data-mobile-nav] .bg-secondary a {
+  color:#00311E;
+}
+
+.page-id-238.scrolling-up [data-mobile-nav] .bg-secondary a {
+  color:#00311e !important;
+}
+
+.page-id-238.scrolling-up  [data-mobile-nav].hidden .dropdown-item {
+  color:#fff !important;
+}
+
+.page-id-238.scrolling-up #nav-main a {
+  color:#fff;
+}
+
+
+.page-id-238.scrolling-up .fill-white {
+  fill: #fff !important;
+}
+
+.page-id-238 .dropdown-item {
+  color:#fff;
+  opacity:1;
+}
+
+.page-id-238[style*="overflow: hidden"] .fill-white {
+  fill: #56E13B;
+}
+
+.page-id-238 .fill-white {
+  fill:#00311E;
+}
+
+.page-id-238 hgroup {
+  color:#00311E;
+}
+
+.page-id-238 a[aria-expanded="false"] {
+  color: #fff;
+}
+
+*/
+
+/* Hacky way to remove spacer height on mobile devices */
+@media screen and (max-width: 768px) {
+  .wp-block-spacer {
+    height: 0!important;
+  }
+  [class^="wp-container-"].wp-block-column:empty {
+    @apply hidden;
+  }
+}
+
+:where(.wp-block-columns.has-background) {
+  padding: 1.25em 0;
+}
+
+.service-cards {
+  @apply my-24;
+}
+
+.evergreen-icon {
+  @apply text-[64px] text-white mb-4;
+}
+
+.reverse-on-mobile {
+  @apply flex flex-col-reverse md:flex-row;
+}
+
+.bg-background {
+  @apply bg-primary lg:bg-transparent;
+}
+
+footer nav ul li a {
+  color: #56e13b!important;
+}
+
+footer nav ul li a:hover,
+footer nav ul li a:focus {
+  color: #fff!important;
+}
+

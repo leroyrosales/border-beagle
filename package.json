@@ -1,35 +1,42 @@
 {
-  "name": "border-beagle",
+  "name": "ig-evergreen-theme",
   "version": "1.0.0",
-  "description": "Border Beagle",
+  "description": "A Twig for WordPress theme using the [Timber Library](https://wordpress.org/plugins/timber-library/), [Gulp](https://gulpjs.com/), [Bootstrap](https://getbootstrap.com/).",
   "main": "index.js",
-  "dependencies": {},
+  "directories": {
+    "test": "tests"
+  },
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
-    "browser-sync": "^2.26.7",
-    "css-mqpacker": "^7.0.0",
-    "cssnano": "^4.1.10",
-    "gulp": "^4.0.2",
-    "gulp-concat": "^2.6.1",
-    "gulp-deporder": "^1.2.0",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-newer": "^1.4.0",
-    "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.1",
-    "gulp-strip-debug": "^3.0.0",
-    "gulp-uglify": "^3.0.2",
-    "gulp-util": "^3.0.8",
-    "postcss-assets": "^5.0.0",
-    "postcss-flexbugs-fixes": "^4.2.0",
-    "uglify-es": "^3.3.9"
+    "@tailwindcss/typography": "^0.5.2",
+    "css-loader": "^6.2.0",
+    "glob": "^8.0.3",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "mini-css-extract-plugin": "^2.2.2",
+    "node-sass": "^7.0.1",
+    "optimize-css-assets-webpack-plugin": "^6.0.1",
+    "postcss-loader": "^7.0.0",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.2",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.0.8"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "TAILWIND_MODE=watch webpack --config webpack.config.dev.js",
+    "build": "NODE_ENV=production webpack --config webpack.config.prod.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
   },
   "author": "",
   "license": "ISC",
-  "browserslist": [
-    "last 2 versions",
-    "> 2%"
-  ]
+  "homepage": "",
+  "dependencies": {
+    "autoprefixer": "^10.3.4",
+    "jquery-awesome-cursor": "^0.3.1",
+    "swiper": "^8.3.2",
+    "tailwindcss": "^3.1.4"
+  }
 }
