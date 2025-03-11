@@ -38,3 +38,11 @@ Install this theme as you would any other, and run `composer install` to install
 * The commented functions found in `functions/custom-roles.php` are to create a custom role for your site. Simply remove the line `require_once( __DIR__ . '/functions/custom-roles.php' );` in the `functions.php` and remove the file if it will not be used. Information regarding creating custom roles and capabilities can be found in the [WordPress support guide](https://wordpress.org/support/article/roles-and-capabilities/).
 * For custom post types, review the code in `functions/custom-post-types.php` and read the [Post Types documention in the WordPress plugin handbook](https://developer.wordpress.org/plugins/post-types/). For the really lazy use [Custom Post Type UI](https://wordpress.org/plugins/custom-post-type-ui/).
 * The functions found in `functions/taxonomy-functions.php` prevent non-admins from adding a new post tag.
+
+## In Memoriam
+
+Louie 2008 - 2025
+
+* [The Beagle Bungalow](https://beaglebungalow.org/)
+* [Houston Beagle Rescue](https://www.houstonbeaglerescue.org/)
+* [Texas Collie Rescue](http://www.texascollierescue.org/)
